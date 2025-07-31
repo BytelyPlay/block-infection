@@ -16,6 +16,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.hyperoil.blockinfection.Blocks.InfectionBlock;
 import org.hyperoil.blockinfection.Utils.BlocksHelper;
+import org.hyperoil.blockinfection.Utils.ItemsHelper;
 
 @Mod(hyperoil.MODID)
 public class hyperoil {
@@ -23,6 +24,7 @@ public class hyperoil {
 
     public hyperoil(IEventBus eventBus, ModContainer container) {
         BlocksHelper.register(eventBus);
+        ItemsHelper.register(eventBus);
 
         eventBus.addListener(this::commonSetup);
     }
