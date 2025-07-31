@@ -15,6 +15,7 @@ import org.hyperoil.blockinfection.hyperoil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class InfectionBlock extends Block {
     public InfectionBlock(Properties properties) {
@@ -45,6 +46,6 @@ public class InfectionBlock extends Block {
     protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
         super.onPlace(state, level, pos, oldState, movedByPiston);
 
-        level.scheduleTick(pos, this, 4);
+        level.scheduleTick(pos, this, ThreadLocalRandom.current().nextInt(2, 6));
     }
 }
