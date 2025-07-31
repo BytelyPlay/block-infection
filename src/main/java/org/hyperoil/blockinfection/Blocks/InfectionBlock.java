@@ -33,7 +33,8 @@ public class InfectionBlock extends Block {
         };
 
         for (BlockPos loopPos : adjacentPos) {
-            if (level.getBlockState(loopPos).isAir()) continue;
+            BlockState loopState = level.getBlockState(loopPos);
+            if (loopState.isAir() || loopState.getBlock() == this) continue;
             level.setBlock(loopPos,
                     BlocksHelper.INFECTION_BLOCK.get().defaultBlockState(),
                     Block.UPDATE_CLIENTS);
