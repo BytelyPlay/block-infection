@@ -20,6 +20,7 @@ import org.hyperoil.blockinfection.Utils.ItemsHelper;
 
 @Mod(hyperoil.MODID)
 public class hyperoil {
+    // TODO: make the immortality reward thing with the charged infection block and the structure and everything (only i really know what this is)
     public static final String MODID = "blockinfection";
 
     public hyperoil(IEventBus eventBus, ModContainer container) {
