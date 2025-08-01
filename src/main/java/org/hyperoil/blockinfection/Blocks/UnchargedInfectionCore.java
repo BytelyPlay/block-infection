@@ -11,6 +11,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -19,8 +20,12 @@ import org.hyperoil.blockinfection.Utils.BlocksHelper;
 import org.hyperoil.blockinfection.Utils.InfectionManager;
 import org.hyperoil.blockinfection.Utils.TranslationKeys;
 import org.hyperoil.blockinfection.hyperoil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UnchargedInfectionCore extends Block {
+    private static final Logger log = LoggerFactory.getLogger(UnchargedInfectionCore.class);
+
     public UnchargedInfectionCore(Properties properties) {
 		super(properties);
     }
@@ -37,15 +42,16 @@ public class UnchargedInfectionCore extends Block {
 
             BlockPos belowPos = pos.below();
             serverLevel.setBlock(belowPos, BlocksHelper.INFECTION_BLOCK.get().defaultBlockState(), Block.UPDATE_CLIENTS);
+            BlockEntity blockEntity = serverLevel.getBlockEntity(belowPos);
+            if (blockEntity instanceof InfectionBlockEntity infectionBlockEntity) {
+                infectionBlockEntity.setInfectionID(infectionID);
+            } else {
+                log.warn("InfectionBlock not a InfectionBlockEntity? Infection cannot spread.");
+            }
             serverLevel.setBlock(pos, BlocksHelper.CHARGED_INFECTION_CORE.get().defaultBlockState(), Block.UPDATE_CLIENTS);
 
             serverPlayer.sendSystemMessage(TranslationKeys.MESSAGE_UNCHARGED_INFECTION_CORE_USE);
         }
         return InteractionResult.PASS;
-    }
-
-    @Override
-    public void destroy(LevelAccessor level, BlockPos pos, BlockState state) {
-        InfectionManager.killInfection(pos);
     }
 }

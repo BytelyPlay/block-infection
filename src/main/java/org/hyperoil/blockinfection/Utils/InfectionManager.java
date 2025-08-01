@@ -16,8 +16,11 @@ import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.hyperoil.blockinfection.hyperoil;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +58,8 @@ public class InfectionManager {
         try {
             ObjectMapper mapper = new ObjectMapper();
             integerAndCoreBlock = mapper.readValue(new FileReader(getSaveFile()), new TypeReference<>() {});
+        } catch (FileNotFoundException ignored) {
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -62,6 +67,8 @@ public class InfectionManager {
     public static void saveData() {
         try {
             ObjectMapper mapper = new ObjectMapper();
+            Path saveFile = Paths.get(getSaveFile());
+            if (!Files.exists(saveFile)) Files.createFile(saveFile);
             mapper.writeValue(new FileWriter(getSaveFile()), integerAndCoreBlock);
             dirty = false;
         } catch (Exception e) {

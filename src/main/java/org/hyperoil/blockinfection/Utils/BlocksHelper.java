@@ -47,5 +47,6 @@ public class BlocksHelper {
 
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);
+        BLOCK_ENTITY_TYPES.register(bus);
     }
 }

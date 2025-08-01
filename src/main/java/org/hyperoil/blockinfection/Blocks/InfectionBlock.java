@@ -38,16 +38,26 @@ public class InfectionBlock extends Block implements EntityBlock {
 
     @Override
     protected void tick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
-        BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity == null) {
-            log.warn("blockEntity == null for the infection block?");
-            return;
-        }
-        if (blockEntity instanceof InfectionBlockEntity entity) {
-            int infectionID = entity.getInfectionID();
-            if (infectionID == InfectionManager.DEFAULT_INFECTION_ID || !InfectionManager.isInfectionStillActive(infectionID)) {
+        InfectionBlockEntity blockEntity;
+        try {
+            BlockEntity thisBlockEntity = level.getBlockEntity(pos);
+            if (thisBlockEntity == null) {
+                log.warn("blockEntity == null for the infection block?");
                 return;
             }
+            if (thisBlockEntity instanceof InfectionBlockEntity entity) {
+                blockEntity = entity;
+                int infectionID = entity.getInfectionID();
+                if (infectionID == InfectionManager.DEFAULT_INFECTION_ID || !InfectionManager.isInfectionStillActive(infectionID)) {
+                    return;
+                }
+            } else {
+                log.warn("InfectionBlock not a InfectionBlockEntity cannot infect returning.");
+                return;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
         }
         BlockPos[] adjacentPos = {
                 pos.above(),
@@ -69,6 +79,12 @@ public class InfectionBlock extends Block implements EntityBlock {
             level.setBlock(loopPos,
                     BlocksHelper.INFECTION_BLOCK.get().defaultBlockState(),
                     Block.UPDATE_CLIENTS);
+            BlockEntity loopBlockEntity = level.getBlockEntity(loopPos);
+            if (loopBlockEntity instanceof InfectionBlockEntity infectionBlockEntity) {
+                infectionBlockEntity.setInfectionID(blockEntity.getInfectionID());
+            } else {
+                log.warn("InfectionBlock not a InfectionBlockEntity? Infection cannot spread. tick method in InfectionBlock class");
+            }
         }
     }
 

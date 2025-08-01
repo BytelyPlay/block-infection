@@ -10,7 +10,6 @@ import org.hyperoil.blockinfection.Utils.BlocksHelper;
 import org.hyperoil.blockinfection.Utils.InfectionManager;
 
 public class InfectionBlockEntity extends BlockEntity {
-    // Acts final please don't modify...
     private int infectionID;
     public InfectionBlockEntity(BlockPos pos, BlockState blockState) {
         super(BlocksHelper.INFECTION_BLOCK_ENTITY.get(), pos, blockState);
@@ -30,5 +29,10 @@ public class InfectionBlockEntity extends BlockEntity {
 
     public int getInfectionID() {
         return infectionID;
+    }
+
+    public void setInfectionID(int infectionID) {
+        this.infectionID = infectionID;
+        setChanged();
     }
 }
