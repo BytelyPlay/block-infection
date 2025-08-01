@@ -27,6 +27,8 @@ public class StaffOfUnlimitedPower extends Item {
                     if (entity.isAlive()) {
                         entity.remove(Entity.RemovalReason.KILLED);
                     }
+                } else {
+                    entity.remove(Entity.RemovalReason.KILLED);
                 }
             }
         }
