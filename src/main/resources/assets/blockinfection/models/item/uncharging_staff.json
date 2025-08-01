@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "blockinfection:item/uncharging_staff",
+		"particle": "blockinfection:item/uncharging_staff"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 8],
+			"to": [9, 13, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [4, 0, 5, 13], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 13], "texture": "#0"},
+				"south": {"uv": [5, 0, 6, 13], "texture": "#0"},
+				"west": {"uv": [2, 0, 4, 13], "texture": "#0"},
+				"up": {"uv": [7, 2, 6, 0], "texture": "#0"},
+				"down": {"uv": [7, 2, 6, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 13, 8],
+			"to": [15, 13, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [11, 12, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 13, 0], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 0], "texture": "#missing"},
+				"south": {"uv": [0, 0, 13, 0], "texture": "#missing"},
+				"west": {"uv": [0, 0, 2, 0], "texture": "#missing"},
+				"up": {"uv": [3, 14, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 13, 2], "texture": "#missing"}
+			}
+		}
+	]
+}
