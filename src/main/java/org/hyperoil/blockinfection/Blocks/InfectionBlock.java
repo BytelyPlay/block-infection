@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.redstone.Orientation;
@@ -20,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class InfectionBlock extends Block {
@@ -40,7 +42,11 @@ public class InfectionBlock extends Block {
 
         for (BlockPos loopPos : adjacentPos) {
             BlockState loopState = level.getBlockState(loopPos);
-            if (loopState.isAir() || loopState.getBlock() == this) continue;
+            // Couldn't find a better way as it will always be unbound if i define it globally and statically or for the instance when it's constructed
+            if (loopState.isAir() || List.of(BlocksHelper.CHARGED_INFECTION_CORE.get(),
+                            BlocksHelper.UNCHARGED_INFECTION_CORE.get(),
+                            BlocksHelper.INFECTION_BLOCK.get())
+                    .contains(loopState.getBlock())) continue;
             level.setBlock(loopPos,
                     BlocksHelper.INFECTION_BLOCK.get().defaultBlockState(),
                     Block.UPDATE_CLIENTS);
