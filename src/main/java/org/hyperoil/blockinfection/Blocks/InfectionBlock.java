@@ -11,27 +11,44 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.AABB;
 import org.hyperoil.blockinfection.Utils.BlocksHelper;
+import org.hyperoil.blockinfection.Utils.InfectionManager;
 import org.hyperoil.blockinfection.hyperoil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class InfectionBlock extends Block {
+public class InfectionBlock extends Block implements EntityBlock {
+    private static final Logger log = LoggerFactory.getLogger(InfectionBlock.class);
+
     public InfectionBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     protected void tick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if (blockEntity == null) {
+            log.warn("blockEntity == null for the infection block?");
+            return;
+        }
+        if (blockEntity instanceof InfectionBlockEntity entity) {
+            int infectionID = entity.getInfectionID();
+            if (infectionID == InfectionManager.DEFAULT_INFECTION_ID || !InfectionManager.isInfectionStillActive(infectionID)) {
+                return;
+            }
+        }
         BlockPos[] adjacentPos = {
                 pos.above(),
                 pos.below(),
@@ -65,5 +82,10 @@ public class InfectionBlock extends Block {
         if (level instanceof ServerLevel) {
             tick(state, (ServerLevel) level, pos, level.getRandom());
         }
+    }
+
+    @Override
+    public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new InfectionBlockEntity(pos, state);
     }
 }
