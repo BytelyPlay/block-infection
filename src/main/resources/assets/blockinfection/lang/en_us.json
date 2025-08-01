@@ -1,5 +1,7 @@
 {
   "block.blockinfection.infection_block": "Infection Block",
   "block.blockinfection.infection_resistant_block": "Infection Resistant Block",
-  "blockinfection.uncharged_infection_core.use.success": "What have you done?"
+  "blockinfection.uncharged_infection_core.use.success": "What have you done?",
+  "item.blockinfection.staff_of_unlimited_power": "The staff of unlimited power",
+  "item.blockinfection.uncharging_staff": "Uncharging Staff"
 }

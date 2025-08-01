@@ -43,6 +43,10 @@ public class ItemsHelper {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(INFECTION_BLOCK_ITEM);
             event.accept(INFECTION_RESISTANT_BLOCK);
+            event.accept(UNCHARGING_STAFF);
+        }
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(STAFF_OF_UNLIMITED_POWER);
         }
     }
 }
