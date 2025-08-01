@@ -6,6 +6,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.hyperoil.blockinfection.Utils.BlocksHelper;
 import org.hyperoil.blockinfection.Utils.ItemsHelper;
+import org.hyperoil.blockinfection.datagen.DataGenerators;
 
 @Mod(hyperoil.MODID)
 public class hyperoil {
