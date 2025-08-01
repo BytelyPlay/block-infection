@@ -73,7 +73,7 @@ public class InfectionManager {
         saveData();
     }
     @SubscribeEvent
-    public static void tick(ServerTickEvent e) {
+    public static void tick(ServerTickEvent.Post e) {
         if (tickCounter >= 300) {
             if (dirty) new Thread(InfectionManager::saveData).start();
             tickCounter = 0;

@@ -21,7 +21,6 @@ import org.hyperoil.blockinfection.Utils.TranslationKeys;
 import org.hyperoil.blockinfection.hyperoil;
 
 public class UnchargedInfectionCore extends Block {
-    private static final Property<?> properties = IntegerProperty.create("infectionID", Integer.MIN_VALUE, Integer.MAX_VALUE);
     public UnchargedInfectionCore(Properties properties) {
 		super(properties);
     }
