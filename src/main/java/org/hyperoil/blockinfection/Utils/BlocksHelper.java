@@ -1,5 +1,7 @@
 package org.hyperoil.blockinfection.Utils;
 
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -25,6 +27,10 @@ public class BlocksHelper {
     public static final DeferredBlock<ChargedInfectionCore> CHARGED_INFECTION_CORE = BLOCKS.registerBlock("charged_infection_core",
             registryName -> new ChargedInfectionCore(registryName
                     .strength(Float.MAX_VALUE, Float.MAX_VALUE)));
+    public static final DeferredBlock<Block> INFECTION_RESISTANT_BLOCK = BLOCKS.registerSimpleBlock("infection_resistant_block",
+            BlockBehaviour.Properties.of()
+                    .explosionResistance(Float.MAX_VALUE)
+                    .destroyTime(120));
 
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);

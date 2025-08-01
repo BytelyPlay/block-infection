@@ -15,6 +15,8 @@ public class ItemsHelper {
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(hyperoil.MODID);
     public static final DeferredItem<? extends BlockItem> INFECTION_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("infection_block",
             BlocksHelper.INFECTION_BLOCK);
+    public static final DeferredItem<? extends BlockItem> INFECTION_RESISTANT_BLOCK = ITEMS.registerSimpleBlockItem("infection_resistant_block",
+            BlocksHelper.INFECTION_RESISTANT_BLOCK);
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
@@ -25,6 +27,7 @@ public class ItemsHelper {
     public static void buildCreativeModeTabContents(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(INFECTION_BLOCK_ITEM);
+            event.accept(INFECTION_RESISTANT_BLOCK);
         }
     }
 }

@@ -1,6 +1,5 @@
 {
   "block.blockinfection.infection_block": "Infection Block",
-  "block.blockinfection.uncharged_infection_core": "Uncharged Infection Core",
-  "block.blockinfection.charged_infection_core": "Charged Infection Core",
+  "block.blockinfection.infection_resistant_block": "Infection Resistant Block",
   "blockinfection.uncharged_infection_core.use.success": "What have you done?"
 }

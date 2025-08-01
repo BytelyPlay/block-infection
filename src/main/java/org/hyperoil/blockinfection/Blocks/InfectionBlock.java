@@ -11,6 +11,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.redstone.Orientation;
@@ -45,8 +46,9 @@ public class InfectionBlock extends Block {
             // Couldn't find a better way as it will always be unbound if i define it globally and statically or for the instance when it's constructed
             if (loopState.isAir() || List.of(BlocksHelper.CHARGED_INFECTION_CORE.get(),
                             BlocksHelper.UNCHARGED_INFECTION_CORE.get(),
-                            BlocksHelper.INFECTION_BLOCK.get())
-                    .contains(loopState.getBlock())) continue;
+                            BlocksHelper.INFECTION_BLOCK.get(),
+                            BlocksHelper.INFECTION_RESISTANT_BLOCK.get())
+                    .contains(loopState.getBlock()) || level.getBlockEntity(loopPos) != null) continue;
             level.setBlock(loopPos,
                     BlocksHelper.INFECTION_BLOCK.get().defaultBlockState(),
                     Block.UPDATE_CLIENTS);
