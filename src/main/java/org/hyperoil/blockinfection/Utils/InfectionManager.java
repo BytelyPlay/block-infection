@@ -35,16 +35,18 @@ public class InfectionManager {
     private static ConcurrentHashMap<BlockPos, Integer> integerAndCoreBlock = new ConcurrentHashMap<>();
     public static boolean dirty = false;
     private static MinecraftServer server = null;
+    private static boolean isInfectionAlive;
 
     public static boolean isInfectionStillActive(Integer integer) {
         return integerAndCoreBlock.containsValue(integer);
     }
     public static boolean isInfectionStillActive() {
-        return !integerAndCoreBlock.isEmpty();
+        return isInfectionAlive;
     }
     public static void killInfection(BlockPos pos) {
         integerAndCoreBlock.remove(pos);
         dirty = true;
+        isInfectionAlive = !integerAndCoreBlock.isEmpty();
     }
     public static int addInfection(BlockPos pos) {
         ThreadLocalRandom random = ThreadLocalRandom.current();
@@ -54,6 +56,7 @@ public class InfectionManager {
         }
         integerAndCoreBlock.put(pos, intToUse);
         dirty = true;
+        isInfectionAlive = true;
 
         return intToUse;
     }

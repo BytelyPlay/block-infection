@@ -12,4 +12,3 @@ But I'll try to make the README.md updated.
 
 # TODO:
 1. Add the structure
-2. Find a way to stop the spread of the infection blocks but make it be able to spread again if another uncharged core block gets activated
