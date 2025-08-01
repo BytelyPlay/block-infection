@@ -46,7 +46,7 @@ public class InfectionManager {
     public static void killInfection(BlockPos pos) {
         integerAndCoreBlock.remove(pos);
         dirty = true;
-        isInfectionAlive = !integerAndCoreBlock.isEmpty();
+        if (integerAndCoreBlock.isEmpty()) isInfectionAlive = false;
     }
     public static int addInfection(BlockPos pos) {
         ThreadLocalRandom random = ThreadLocalRandom.current();
@@ -63,7 +63,7 @@ public class InfectionManager {
     private static void init() {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            integerAndCoreBlock = mapper.readValue(new FileReader(getSaveFile()), new TypeReference<>() {});
+            integerAndCoreBlock = mapper.readValue(new FileReader(getSaveFile().toString()), new TypeReference<>() {});
         } catch (FileNotFoundException ignored) {
 
         } catch (Exception e) {
@@ -73,9 +73,9 @@ public class InfectionManager {
     public static void saveData() {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            Path saveFile = Paths.get(getSaveFile());
+            Path saveFile = getSaveFile();
             if (!Files.exists(saveFile)) Files.createFile(saveFile);
-            mapper.writeValue(new FileWriter(getSaveFile()), integerAndCoreBlock);
+            mapper.writeValue(new FileWriter(saveFile.toString()), integerAndCoreBlock);
             dirty = false;
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,6 +90,8 @@ public class InfectionManager {
         if (tickCounter >= 300) {
             if (dirty) new Thread(InfectionManager::saveData).start();
             tickCounter = 0;
+        } else {
+            tickCounter++;
         }
     }
     @SubscribeEvent
@@ -97,7 +99,7 @@ public class InfectionManager {
         server = event.getServer();
         init();
     }
-    private static String getSaveFile() {
-        return server.getWorldPath(LevelResource.ROOT) + "config/infectionData.json";
+    private static Path getSaveFile() {
+        return server.getWorldPath(LevelResource.ROOT).resolve("data/infectionData.json");
     }
 }

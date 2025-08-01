@@ -1,5 +1,6 @@
 package org.hyperoil.blockinfection.Blocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -31,7 +32,7 @@ public class ChargedInfectionCore extends Block {
     }
 
     @Override
-    public void destroy(LevelAccessor level, BlockPos pos, BlockState state) {
+    protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
         InfectionManager.killInfection(pos);
     }
 }
