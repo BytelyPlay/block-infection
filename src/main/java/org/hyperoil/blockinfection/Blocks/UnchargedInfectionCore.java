@@ -38,16 +38,10 @@ public class UnchargedInfectionCore extends Block {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
-            int infectionID = InfectionManager.addInfection(pos);
+            InfectionManager.addInfection(pos);
 
             BlockPos belowPos = pos.below();
             serverLevel.setBlock(belowPos, BlocksHelper.INFECTION_BLOCK.get().defaultBlockState(), Block.UPDATE_CLIENTS);
-            BlockEntity blockEntity = serverLevel.getBlockEntity(belowPos);
-            if (blockEntity instanceof InfectionBlockEntity infectionBlockEntity) {
-                infectionBlockEntity.setInfectionID(infectionID);
-            } else {
-                log.warn("InfectionBlock not a InfectionBlockEntity? Infection cannot spread.");
-            }
             serverLevel.setBlock(pos, BlocksHelper.CHARGED_INFECTION_CORE.get().defaultBlockState(), Block.UPDATE_CLIENTS);
 
             serverPlayer.sendSystemMessage(TranslationKeys.MESSAGE_UNCHARGED_INFECTION_CORE_USE);

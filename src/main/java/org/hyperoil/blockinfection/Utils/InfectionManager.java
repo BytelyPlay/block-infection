@@ -39,6 +39,9 @@ public class InfectionManager {
     public static boolean isInfectionStillActive(Integer integer) {
         return integerAndCoreBlock.containsValue(integer);
     }
+    public static boolean isInfectionStillActive() {
+        return !integerAndCoreBlock.isEmpty();
+    }
     public static void killInfection(BlockPos pos) {
         integerAndCoreBlock.remove(pos);
         dirty = true;
