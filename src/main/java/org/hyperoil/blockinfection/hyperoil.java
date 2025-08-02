@@ -26,12 +26,4 @@ public class hyperoil {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
-
-    private void serverStoppingEvent(ServerStoppingEvent event) {
-        InfectionManager.saveData();
-    }
-
-    private void clientStoppingEvent(ClientStoppingEvent event) {
-
-    }
 }

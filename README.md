@@ -10,7 +10,6 @@ Also sorry for the trash textures I'm bad at making them
 I might forget to update this now that I think about it so check the commit history for more up-to-date information. \
 But I'll try to make the README.md updated.
 
-The structure will spawn at 0, 0 on a surface and spawn every 10000, 10000 blocks so -10000, -10000 10000 10000 20000 20000 -20000 -20000 etc but never at coordinates such as -20000 -30000
-
 # TODO:
-1. Add the structure
+1. ~~Add the structure~~ (not implemented if someone can implement this or i learn how to in the future i will)
+2. make a way for users to make or get the uncharging staff and the uncharged core 

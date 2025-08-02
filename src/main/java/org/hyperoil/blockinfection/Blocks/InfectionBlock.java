@@ -54,7 +54,8 @@ public class InfectionBlock extends Block {
             if (loopState.isAir() || List.of(BlocksHelper.CHARGED_INFECTION_CORE.get(),
                             BlocksHelper.UNCHARGED_INFECTION_CORE.get(),
                             BlocksHelper.INFECTION_BLOCK.get(),
-                            BlocksHelper.INFECTION_RESISTANT_BLOCK.get())
+                            BlocksHelper.INFECTION_RESISTANT_BLOCK.get(),
+                            Blocks.LIGHT)
                     .contains(loopState.getBlock()) || level.getBlockEntity(loopPos) != null) continue;
             level.setBlock(loopPos,
                     BlocksHelper.INFECTION_BLOCK.get().defaultBlockState(),
