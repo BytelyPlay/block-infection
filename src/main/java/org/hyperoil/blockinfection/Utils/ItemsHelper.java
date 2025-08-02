@@ -40,6 +40,7 @@ public class ItemsHelper {
     public static final DeferredItem<StructurePlacer> STRUCTURE_PLACER = ITEMS.registerItem("structure_placer",
             registryName -> new StructurePlacer(registryName
                     .stacksTo(1)));
+    public static final DeferredItem<Item> STRUCTURE_CATALYST = ITEMS.registerSimpleItem("structure_catalyst");
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
