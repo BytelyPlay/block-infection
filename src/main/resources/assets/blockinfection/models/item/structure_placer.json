@@ -1,0 +1,23 @@
+{
+  "format_version": "1.21.6",
+  "credit": "BytelyPlay",
+  "texture_size": [32, 32],
+  "textures": {
+    "1": "blockinfection:item/structure_placer"
+  },
+  "elements": [
+    {
+      "from": [3, 4, 3],
+      "to": [12, 8, 14],
+      "rotation": {"angle": 0, "axis": "y", "origin": [7, 4, 7]},
+      "faces": {
+        "north": {"uv": [0, 7.5, 4.5, 9.5], "texture": "#1"},
+        "east": {"uv": [0, 5.5, 5.5, 7.5], "texture": "#1"},
+        "south": {"uv": [4.5, 7.5, 9, 9.5], "texture": "#1"},
+        "west": {"uv": [5.5, 5.5, 11, 7.5], "texture": "#1"},
+        "up": {"uv": [4.5, 5.5, 0, 0], "texture": "#1"},
+        "down": {"uv": [9, 0, 4.5, 5.5], "texture": "#1"}
+      }
+    }
+  ]
+}

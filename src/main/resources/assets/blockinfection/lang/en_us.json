@@ -5,5 +5,6 @@
   "item.blockinfection.staff_of_unlimited_power": "The staff of unlimited power",
   "item.blockinfection.uncharging_staff": "Uncharging Staff",
   "block.blockinfection.uncharged_infection_core": "Uncharged Infection Core",
-  "block.blockinfection.charged_infection_core": "Charged Infection Core"
+  "block.blockinfection.charged_infection_core": "Charged Infection Core",
+  "item.blockinfection.structure_placer": "Structure Placer"
 }

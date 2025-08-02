@@ -15,6 +15,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.hyperoil.blockinfection.Items.StaffOfUnlimitedPower;
+import org.hyperoil.blockinfection.Items.StructurePlacer;
 import org.hyperoil.blockinfection.Items.UnchargingStaff;
 import org.hyperoil.blockinfection.hyperoil;
 
@@ -36,6 +37,9 @@ public class ItemsHelper {
     public static final DeferredItem<StaffOfUnlimitedPower> STAFF_OF_UNLIMITED_POWER = ITEMS.registerItem("staff_of_unlimited_power",
             registryName -> new StaffOfUnlimitedPower(registryName
                     .stacksTo(1)));
+    public static final DeferredItem<StructurePlacer> STRUCTURE_PLACER = ITEMS.registerItem("structure_placer",
+            registryName -> new StructurePlacer(registryName
+                    .stacksTo(1)));
 
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
@@ -45,12 +49,13 @@ public class ItemsHelper {
 
     public static void buildCreativeModeTabContents(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(INFECTION_BLOCK_ITEM);
-            event.accept(INFECTION_RESISTANT_BLOCK);
             event.accept(UNCHARGING_STAFF);
+            event.accept(STRUCTURE_PLACER);
 
             event.accept(CHARGED_INFECTION_CORE);
             event.accept(UNCHARGED_INFECTION_CORE);
+            event.accept(INFECTION_BLOCK_ITEM);
+            event.accept(INFECTION_RESISTANT_BLOCK);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(STAFF_OF_UNLIMITED_POWER);
