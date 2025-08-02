@@ -26,6 +26,10 @@ public class ItemsHelper {
             BlocksHelper.INFECTION_BLOCK);
     public static final DeferredItem<? extends BlockItem> INFECTION_RESISTANT_BLOCK = ITEMS.registerSimpleBlockItem("infection_resistant_block",
             BlocksHelper.INFECTION_RESISTANT_BLOCK);
+    public static final DeferredItem<? extends BlockItem> UNCHARGED_INFECTION_CORE = ITEMS.registerSimpleBlockItem("uncharged_infection_core",
+            BlocksHelper.UNCHARGED_INFECTION_CORE);
+    public static final DeferredItem<? extends BlockItem> CHARGED_INFECTION_CORE = ITEMS.registerSimpleBlockItem("charged_infection_core",
+            BlocksHelper.CHARGED_INFECTION_CORE);
     public static final DeferredItem<UnchargingStaff> UNCHARGING_STAFF = ITEMS.registerItem("uncharging_staff",
             registryName -> new UnchargingStaff(registryName
                     .stacksTo(1)));
@@ -44,6 +48,9 @@ public class ItemsHelper {
             event.accept(INFECTION_BLOCK_ITEM);
             event.accept(INFECTION_RESISTANT_BLOCK);
             event.accept(UNCHARGING_STAFF);
+
+            event.accept(CHARGED_INFECTION_CORE);
+            event.accept(UNCHARGED_INFECTION_CORE);
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(STAFF_OF_UNLIMITED_POWER);

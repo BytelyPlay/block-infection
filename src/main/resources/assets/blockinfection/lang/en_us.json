@@ -3,5 +3,7 @@
   "block.blockinfection.infection_resistant_block": "Infection Resistant Block",
   "blockinfection.uncharged_infection_core.use.success": "What have you done?",
   "item.blockinfection.staff_of_unlimited_power": "The staff of unlimited power",
-  "item.blockinfection.uncharging_staff": "Uncharging Staff"
+  "item.blockinfection.uncharging_staff": "Uncharging Staff",
+  "block.blockinfection.uncharged_infection_core": "Uncharged Infection Core",
+  "block.blockinfection.charged_infection_core": "Charged Infection Core"
 }

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "blockinfection:block/charged_infection_core"
+  }
+}
