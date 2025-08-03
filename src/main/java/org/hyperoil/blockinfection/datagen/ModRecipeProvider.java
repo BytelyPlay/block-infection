@@ -31,7 +31,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_diamond", has(Items.DIAMOND))
                 .save(this.output);
         ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC,
-                new ItemStack(ItemsHelper.STRUCTURE_CATALYST.get(), 1))
+                        new ItemStack(ItemsHelper.STRUCTURE_CATALYST.get(), 1))
                 .requires(Items.NETHER_STAR)
                 .requires(Items.DRAGON_EGG)
                 .requires(Items.DRIED_GHAST)
@@ -39,6 +39,11 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.SCULK_SHRIEKER)
                 .requires(Items.CALIBRATED_SCULK_SENSOR)
                 .requires(Items.NETHERITE_BLOCK, 3)
+                .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
+                .save(this.output);
+        ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC,
+                        new ItemStack(ItemsHelper.STRUCTURE_MAKER.get()))
+                .requires(Items.NETHER_STAR, 3)
                 .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
                 .save(this.output);
     }

@@ -10,6 +10,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.hyperoil.blockinfection.Blocks.ChargedInfectionCore;
 import org.hyperoil.blockinfection.Blocks.InfectionBlock;
+import org.hyperoil.blockinfection.Blocks.StructureMaker;
 import org.hyperoil.blockinfection.Blocks.UnchargedInfectionCore;
 import org.hyperoil.blockinfection.hyperoil;
 
@@ -35,6 +36,10 @@ public class BlocksHelper {
             BlockBehaviour.Properties.of()
                     .explosionResistance(Float.MAX_VALUE)
                     .destroyTime(120));
+    public static final DeferredBlock<StructureMaker> STRUCTURE_MAKER = BLOCKS.registerBlock("structure_maker",
+            properties -> new StructureMaker(properties
+                    .destroyTime(45)
+                    .noCollission()));
 
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);

@@ -15,4 +15,4 @@ Probably going to make a 9x9 but the problem is just that i feel like nothing i 
 
 # TODO:
 1. ~~Add the structure~~ (not implemented if someone can implement this or i learn how to in the future i will)
-2. make a way for users to make or get the uncharging staff and the uncharged core 
+2. make a way for users to make or get the uncharging staff and the ~~uncharged core~~ (done only the uncharging staff left)
