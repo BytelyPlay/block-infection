@@ -6,6 +6,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.lifecycle.ClientStoppingEvent;
 import net.neoforged.neoforge.event.server.ServerStoppingEvent;
+import org.hyperoil.blockinfection.Utils.BlockEntitiesHelper;
 import org.hyperoil.blockinfection.Utils.BlocksHelper;
 import org.hyperoil.blockinfection.Utils.InfectionManager;
 import org.hyperoil.blockinfection.Utils.ItemsHelper;
@@ -20,6 +21,7 @@ public class hyperoil {
     public hyperoil(IEventBus eventBus, ModContainer container) {
         BlocksHelper.register(eventBus);
         ItemsHelper.register(eventBus);
+        BlockEntitiesHelper.register(eventBus);
 
         eventBus.addListener(this::commonSetup);
     }

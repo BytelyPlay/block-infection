@@ -10,13 +10,17 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import org.hyperoil.blockinfection.Blocks.BlockEntities.ChargedInfectionCoreBlockEntity;
 import org.hyperoil.blockinfection.Utils.BlocksHelper;
 import org.hyperoil.blockinfection.Utils.InfectionManager;
 import org.hyperoil.blockinfection.Utils.ItemsHelper;
+import org.jetbrains.annotations.Nullable;
 
-public class ChargedInfectionCore extends Block {
+public class ChargedInfectionCore extends Block implements EntityBlock {
     public ChargedInfectionCore(Properties properties) {
 		super(properties);
     }
@@ -34,5 +38,10 @@ public class ChargedInfectionCore extends Block {
     @Override
     protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
         InfectionManager.killInfection(pos);
+    }
+
+    @Override
+    public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new ChargedInfectionCoreBlockEntity(pos, state);
     }
 }
