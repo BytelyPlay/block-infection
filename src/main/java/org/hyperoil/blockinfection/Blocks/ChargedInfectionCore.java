@@ -1,6 +1,8 @@
 package org.hyperoil.blockinfection.Blocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -14,13 +16,17 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import org.hyperoil.blockinfection.Blocks.BlockEntities.ChargedInfectionCoreBlockEntity;
+import net.neoforged.neoforge.capabilities.BlockCapability;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.energy.IEnergyStorage;
 import org.hyperoil.blockinfection.Utils.BlocksHelper;
 import org.hyperoil.blockinfection.Utils.InfectionManager;
 import org.hyperoil.blockinfection.Utils.ItemsHelper;
 import org.jetbrains.annotations.Nullable;
 
-public class ChargedInfectionCore extends Block implements EntityBlock {
+import java.util.List;
+
+public class ChargedInfectionCore extends Block {
     public ChargedInfectionCore(Properties properties) {
 		super(properties);
     }
@@ -38,10 +44,5 @@ public class ChargedInfectionCore extends Block implements EntityBlock {
     @Override
     protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
         InfectionManager.killInfection(pos);
-    }
-
-    @Override
-    public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new ChargedInfectionCoreBlockEntity(pos, state);
     }
 }

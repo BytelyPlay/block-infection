@@ -1,3 +1,5 @@
-// 1.21.8	2025-08-01T13:37:16.8965683	BlockInfection recipe
+// 1.21.8	2025-08-03T12:11:28.9825146	BlockInfection recipe
 f3c4c8f5c01fcc7b04941279b6620e00d60e4693 data/blockinfection/advancement/recipes/misc/infection_resistant_block.json
+1f4f8aa2af4c6873cce4b70b97d00b7536173d20 data/blockinfection/advancement/recipes/misc/structure_catalyst.json
 a5a549c1abaa738eec286dbc888ceea32eb6d62e data/blockinfection/recipe/infection_resistant_block.json
+2f47154050f74fb5c3c4cdb7b705952dd0d2b6e1 data/blockinfection/recipe/structure_catalyst.json

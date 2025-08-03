@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:nether_star",
+    "minecraft:dragon_egg",
+    "minecraft:dried_ghast",
+    "minecraft:sculk_sensor",
+    "minecraft:sculk_shrieker",
+    "minecraft:calibrated_sculk_sensor",
+    "minecraft:netherite_block",
+    "minecraft:netherite_block",
+    "minecraft:netherite_block"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blockinfection:structure_catalyst"
+  }
+}
