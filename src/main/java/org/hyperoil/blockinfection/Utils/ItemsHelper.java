@@ -52,6 +52,7 @@ public class ItemsHelper {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(UNCHARGING_STAFF);
             event.accept(STRUCTURE_PLACER);
+            event.accept(STRUCTURE_CATALYST);
 
             event.accept(CHARGED_INFECTION_CORE);
             event.accept(UNCHARGED_INFECTION_CORE);
