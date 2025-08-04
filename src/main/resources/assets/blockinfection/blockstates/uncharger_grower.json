@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "growth=1": {"model":"blockinfection:block/uncharger_grower_1"},
+    "growth=2": {"model":"blockinfection:block/uncharger_grower_2"},
+    "growth=3": {"model":"blockinfection:block/uncharger_grower_3"},
+    "growth=4": {"model":"blockinfection:block/uncharger_grower_4"},
+    "growth=5": {"model":"blockinfection:block/uncharger_grower_5"},
+    "growth=6": {"model":"blockinfection:block/uncharger_grower_6"},
+    "growth=7": {"model":"blockinfection:block/uncharger_grower_7"},
+    "growth=8": {"model":"blockinfection:block/uncharger_grower_8"}
+  }
+}

@@ -18,7 +18,7 @@ Third step: right click the structure maker with the 64 structure catalysts \
 Fourth step: right click the ground with the structure placer \
 fifth step: find a way inside (not gonna spoil it but it is basically a vanilla glitch very well known...) \
 Sixth step: right click the uncharged infection core \
-Seventh step: wait until 8 random ticks happen on the uncharger grower (the block above the charged infection core) i will texture it to have the numbers on it if i forget to update the readme and you see them then yeah but at the time of writing there isn't any texture sorry \
+Seventh step: wait until 8 random ticks happen on the uncharger grower (the block above the charged infection core) i will texture it to have the numbers on it (8 will just be a checkmark) if i forget to update the readme and you see them then yeah but at the time of writing there isn't any texture sorry \
 Eighth step: right click the uncharger grower to get the uncharging staff \
 Ninth and final step: right click the charged infection core with the uncharging staff to get the staff of unlimited power (this staff one shots anything and if it can't kill it, it'll despawn it but normally it should kill)
 
