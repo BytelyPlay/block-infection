@@ -45,4 +45,9 @@ public class ChargedInfectionCore extends Block {
     protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
         InfectionManager.killInfection(pos);
     }
+
+    @Override
+    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        level.setBlock(pos.above(), BlocksHelper.UNCHARGER_GROWER.get().defaultBlockState(), Block.UPDATE_CLIENTS);
+    }
 }

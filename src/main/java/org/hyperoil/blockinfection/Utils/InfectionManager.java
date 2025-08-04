@@ -1,6 +1,7 @@
 package org.hyperoil.blockinfection.Utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
@@ -63,7 +64,10 @@ public class InfectionManager {
     private static void init() {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            integerAndCoreBlock = mapper.readValue(new FileReader(getSaveFile().toString()), new TypeReference<>() {});
+            FileReader reader = new FileReader(getSaveFile().toString());
+            JsonNode rootNode = mapper.readValue(reader, new TypeReference<>() {});
+            if (rootNode.isEmpty()) return;
+            integerAndCoreBlock = mapper.readValue(rootNode.traverse(), new TypeReference<>() {});
         } catch (FileNotFoundException ignored) {
 
         } catch (Exception e) {

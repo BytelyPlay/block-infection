@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_structure_placer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blockinfection:structure_placer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blockinfection:uncharging_staff_shard"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_structure_placer"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blockinfection:uncharging_staff_shard"
+    ]
+  }
+}

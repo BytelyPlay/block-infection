@@ -8,10 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.capabilities.*;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.hyperoil.blockinfection.Blocks.ChargedInfectionCore;
-import org.hyperoil.blockinfection.Blocks.InfectionBlock;
-import org.hyperoil.blockinfection.Blocks.StructureMaker;
-import org.hyperoil.blockinfection.Blocks.UnchargedInfectionCore;
+import org.hyperoil.blockinfection.Blocks.*;
 import org.hyperoil.blockinfection.hyperoil;
 
 import static org.hyperoil.blockinfection.hyperoil.MODID;
@@ -40,6 +37,10 @@ public class BlocksHelper {
             properties -> new StructureMaker(properties
                     .destroyTime(45)
                     .noCollission()));
+    public static final DeferredBlock<UnchargerGrowerBlock> UNCHARGER_GROWER = BLOCKS.registerBlock("uncharger_grower", props ->
+            new UnchargerGrowerBlock(props
+                    .strength(Float.MAX_VALUE, Float.MAX_VALUE)
+                    .randomTicks()));
 
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);
