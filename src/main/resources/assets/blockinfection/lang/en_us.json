@@ -7,5 +7,6 @@
   "block.blockinfection.uncharged_infection_core": "Uncharged Infection Core",
   "block.blockinfection.charged_infection_core": "Charged Infection Core",
   "item.blockinfection.structure_placer": "Structure Placer",
-  "item.blockinfection.structure_catalyst": "Structure Catalyst"
+  "item.blockinfection.structure_catalyst": "Structure Catalyst",
+  "block.blockinfection.structure_maker": "Structure Maker"
 }

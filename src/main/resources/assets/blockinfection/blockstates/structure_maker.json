@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "blockinfection:block/structure_maker"
+    }
+  }
+}
