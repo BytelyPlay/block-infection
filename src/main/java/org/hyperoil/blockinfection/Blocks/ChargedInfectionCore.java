@@ -23,7 +23,6 @@ import org.hyperoil.blockinfection.Utils.BlocksHelper;
 import org.hyperoil.blockinfection.Utils.InfectionManager;
 import org.hyperoil.blockinfection.Utils.ItemsHelper;
 import org.jetbrains.annotations.Nullable;
-
 import java.util.List;
 
 public class ChargedInfectionCore extends Block {
