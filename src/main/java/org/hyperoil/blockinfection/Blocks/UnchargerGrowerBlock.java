@@ -33,11 +33,6 @@ public class UnchargerGrowerBlock extends Block {
     }
 
     @Override
-    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        System.out.println("a");
-    }
-
-    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(GROWTH);
     }
