@@ -12,7 +12,7 @@ But I'll try to make the README.md updated.
 
 BACKUP BEFORE PLAYING!!!!
 
-# How to play (I seriously even if only on the client, recommend JEI):
+# How to play (I seriously, even if only on the client, recommend JEI):
 Optional first step: Get infection resistant blocks to protect your base just sorrounding your base with it or making the floor that can make your base resistant \
 First step: craft 64 structure catalysts \
 Second step: craft the structure maker \
