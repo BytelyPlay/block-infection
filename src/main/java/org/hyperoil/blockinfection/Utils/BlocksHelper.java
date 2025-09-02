@@ -1,15 +1,11 @@
 package org.hyperoil.blockinfection.Utils;
 
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.capabilities.*;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.hyperoil.blockinfection.Blocks.*;
-import org.hyperoil.blockinfection.hyperoil;
 
 import static org.hyperoil.blockinfection.hyperoil.MODID;
 

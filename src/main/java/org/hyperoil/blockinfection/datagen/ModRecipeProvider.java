@@ -1,13 +1,11 @@
 package org.hyperoil.blockinfection.datagen;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.neoforged.neoforge.capabilities.Capabilities;
 import org.hyperoil.blockinfection.Utils.ItemsHelper;
 import org.jetbrains.annotations.NotNull;
 
