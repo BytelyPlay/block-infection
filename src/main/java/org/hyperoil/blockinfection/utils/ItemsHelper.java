@@ -1,4 +1,4 @@
-package org.hyperoil.blockinfection.Utils;
+package org.hyperoil.blockinfection.utils;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;

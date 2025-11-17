@@ -1,4 +1,4 @@
-package org.hyperoil.blockinfection.Blocks;
+package org.hyperoil.blockinfection.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -10,9 +10,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import org.hyperoil.blockinfection.Utils.BlocksHelper;
-import org.hyperoil.blockinfection.Utils.InfectionManager;
-import org.hyperoil.blockinfection.Utils.ItemsHelper;
+import org.hyperoil.blockinfection.utils.BlocksHelper;
+import org.hyperoil.blockinfection.utils.InfectionManager;
+import org.hyperoil.blockinfection.utils.ItemsHelper;
 import org.jetbrains.annotations.NotNull;
 
 public class ChargedInfectionCore extends Block {
@@ -32,7 +32,7 @@ public class ChargedInfectionCore extends Block {
 
     @Override
     protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
-        InfectionManager.killInfection(pos);
+        InfectionManager.getInstanceForLevel(level).killInfection(pos);
     }
 
     @Override

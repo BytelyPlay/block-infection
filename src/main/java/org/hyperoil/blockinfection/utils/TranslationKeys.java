@@ -1,4 +1,4 @@
-package org.hyperoil.blockinfection.Utils;
+package org.hyperoil.blockinfection.utils;
 
 import net.minecraft.network.chat.Component;
 import org.hyperoil.blockinfection.hyperoil;

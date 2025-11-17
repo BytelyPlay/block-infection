@@ -4,8 +4,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import org.hyperoil.blockinfection.Utils.BlocksHelper;
-import org.hyperoil.blockinfection.Utils.ItemsHelper;
+import org.hyperoil.blockinfection.utils.BlocksHelper;
+import org.hyperoil.blockinfection.utils.ItemsHelper;
 
 @Mod(hyperoil.MODID)
 public class hyperoil {

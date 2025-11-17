@@ -1,4 +1,4 @@
-package org.hyperoil.blockinfection.Blocks;
+package org.hyperoil.blockinfection.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.redstone.Orientation;
-import org.hyperoil.blockinfection.Utils.BlocksHelper;
-import org.hyperoil.blockinfection.Utils.InfectionManager;
+import org.hyperoil.blockinfection.utils.BlocksHelper;
+import org.hyperoil.blockinfection.utils.InfectionManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
@@ -27,7 +27,7 @@ public class InfectionBlock extends Block {
 
     @Override
     protected void tick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
-        if (!InfectionManager.isInfectionStillActive()) return;
+        if (!InfectionManager.getInstanceForLevel(level).isInfectionStillActive()) return;
         BlockPos[] adjacentPos = {
                 pos.above(),
                 pos.below(),

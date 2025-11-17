@@ -1,4 +1,4 @@
-package org.hyperoil.blockinfection.Blocks;
+package org.hyperoil.blockinfection.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -9,7 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import org.hyperoil.blockinfection.Utils.ItemsHelper;
+import org.hyperoil.blockinfection.utils.ItemsHelper;
 
 public class StructureMaker extends Block {
     public StructureMaker(Properties properties) {

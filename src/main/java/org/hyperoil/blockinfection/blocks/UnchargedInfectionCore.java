@@ -1,4 +1,4 @@
-package org.hyperoil.blockinfection.Blocks;
+package org.hyperoil.blockinfection.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -11,9 +11,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import org.hyperoil.blockinfection.Utils.BlocksHelper;
-import org.hyperoil.blockinfection.Utils.InfectionManager;
-import org.hyperoil.blockinfection.Utils.TranslationKeys;
+import org.hyperoil.blockinfection.utils.BlocksHelper;
+import org.hyperoil.blockinfection.utils.InfectionManager;
+import org.hyperoil.blockinfection.utils.TranslationKeys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,7 +32,7 @@ public class UnchargedInfectionCore extends Block {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
-            InfectionManager.addInfection(pos);
+            InfectionManager.getInstanceForLevel(serverLevel).addInfection(pos);
 
             BlockPos belowPos = pos.below();
             serverLevel.setBlock(belowPos, BlocksHelper.INFECTION_BLOCK.get().defaultBlockState(), Block.UPDATE_CLIENTS);
