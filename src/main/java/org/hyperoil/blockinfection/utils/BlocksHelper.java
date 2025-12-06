@@ -25,14 +25,14 @@ public class BlocksHelper {
     public static final DeferredBlock<ChargedInfectionCore> CHARGED_INFECTION_CORE = BLOCKS.registerBlock("charged_infection_core",
             registryName -> new ChargedInfectionCore(registryName
                     .strength(Float.MAX_VALUE, Float.MAX_VALUE)));
-    public static final DeferredBlock<Block> INFECTION_RESISTANT_BLOCK = BLOCKS.registerSimpleBlock("infection_resistant_block",
-            BlockBehaviour.Properties.of()
+    public static final DeferredBlock<Block> INFECTION_RESISTANT_BLOCK = BLOCKS.registerBlock("infection_resistant_block",
+            registryName -> new Block(registryName
                     .explosionResistance(Float.MAX_VALUE)
-                    .destroyTime(120));
+                    .destroyTime(120)));
     public static final DeferredBlock<StructureMaker> STRUCTURE_MAKER = BLOCKS.registerBlock("structure_maker",
             properties -> new StructureMaker(properties
                     .destroyTime(45)
-                    .noCollission()));
+                    .noCollision()));
     public static final DeferredBlock<UnchargerGrowerBlock> UNCHARGER_GROWER = BLOCKS.registerBlock("uncharger_grower", props ->
             new UnchargerGrowerBlock(props
                     .strength(Float.MAX_VALUE, Float.MAX_VALUE)
